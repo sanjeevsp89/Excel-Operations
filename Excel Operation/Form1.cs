@@ -26,7 +26,7 @@ namespace Excel_Operation
             int size = -1;
             DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
 
-       // C: \Users\sanjeev.nair\Desktop\Story8302\CopyTest8302.xlsx
+       // C: \Users\sss\Desktop\Story\Test302.xlsx
             if (result == DialogResult.OK) // Test result.
             {
                 string file = openFileDialog1.FileName;
@@ -50,7 +50,7 @@ namespace Excel_Operation
                     for (int rowCount = 2; rowCount <= 265; rowCount++)
                     {
                         textBox1.Text = "";
-                        string update = "UPDATE GDPRDetail SET Ordinal =  {0} WHERE TableName = '{1}' AND GDPRHeadID = 3";
+                        string update = "UPDATE Details SET Ordinal =  {0} WHERE TableName = '{1}' AND GroupId = 3";
                         table = Convert.ToString((xlRange.Cells[rowCount, 1] as Microsoft.Office.Interop.Excel.Range).Text);
                         ordinal = Convert.ToInt16((xlRange.Cells[rowCount, 2] as Microsoft.Office.Interop.Excel.Range).Text);
                         query = string.Format(update, ordinal, table.Trim());
@@ -81,7 +81,7 @@ namespace Excel_Operation
                         //}
 
 
-                        //int startPos = query.LastIndexOf("[NS_LearnShare].") + "[NS_LearnShare].".Length;
+                        //int startPos = query.LastIndexOf("database") + "[NS_LearnShare].".Length;
                         //int length = query.IndexOf("WHERE") - startPos;
                         //string table = query.Substring(startPos, length);
 
